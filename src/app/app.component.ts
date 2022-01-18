@@ -6,5 +6,21 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'ipmetest';
+
+  title: string = 'Hello IPME !';
+  isClicked: boolean = false;
+
+  private getUpperTitle(): string {
+    return this.title.toUpperCase();
+  }
+
+  coucou(): void {
+    this.title = 'Coucou IPME !';
+    this.isClicked = !this.isClicked;
+  }
+
+  hello(): void {
+    this.title = 'Hello IPME !';
+    this.isClicked = !this.isClicked;
+  }
 }

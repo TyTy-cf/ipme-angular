@@ -1,0 +1,119 @@
+
+export class Hero {
+
+  private _name: string = '';
+  private _level: number = 1;
+  private _lifePointMax: number = 0;
+  private _currentLifePoint: number = 0;
+  private _physicalPower: number = 0;
+  private _armor: number = 20;
+  private _criticalStrikeChance: number = 0;
+  private _criticalStrikeRatio: number = 1.5;
+  private _image: string = '';
+  private _backgroundColor: string = '';
+  private _color: string = '';
+
+  constructor(name: string, lifePointMax: number, physicalPower: number, armor: number, criticalStrikeChance: number, image: string, background: string, color: string) {
+    this._name = name;
+    this._lifePointMax = lifePointMax;
+    this._currentLifePoint = lifePointMax;
+    this._physicalPower = physicalPower;
+    this._armor = armor;
+    this._criticalStrikeChance = criticalStrikeChance;
+    this._image = image;
+    this._backgroundColor = background;
+    this._color = color;
+  }
+
+  get backgroundColor(): string {
+    return this._backgroundColor;
+  }
+
+  set backgroundColor(value: string) {
+    this._backgroundColor = value;
+  }
+
+  get name(): string {
+    return this._name;
+  }
+
+  set name(value: string) {
+    this._name = value;
+  }
+
+  get level(): number {
+    return this._level;
+  }
+
+  set level(value: number) {
+    this._level = value;
+  }
+
+  get lifePointMax(): number {
+    return this._lifePointMax;
+  }
+
+  set lifePointMax(value: number) {
+    this._lifePointMax = value;
+  }
+
+  get currentLifePoint(): number {
+    return this._currentLifePoint;
+  }
+
+  set currentLifePoint(value: number) {
+    this._currentLifePoint = value;
+  }
+
+  get physicalPower(): number {
+    return this._physicalPower;
+  }
+
+  set physicalPower(value: number) {
+    this._physicalPower = value;
+  }
+
+  get armor(): number {
+    return this._armor;
+  }
+
+  set armor(value: number) {
+    this._armor = value;
+  }
+
+  get criticalStrikeChance(): number {
+    return this._criticalStrikeChance;
+  }
+
+  set criticalStrikeChance(value: number) {
+    this._criticalStrikeChance = value;
+  }
+
+  get criticalStrikeRatio(): number {
+    return this._criticalStrikeRatio;
+  }
+
+  set criticalStrikeRatio(value: number) {
+    this._criticalStrikeRatio = value;
+  }
+
+  get image(): string {
+    return this._image;
+  }
+
+  set image(value: string) {
+    this._image = value;
+  }
+
+  get color(): string {
+    return this._color;
+  }
+
+  set color(value: string) {
+    this._color = value;
+  }
+
+  getPercentLife(): number {
+    return (this.currentLifePoint/this.lifePointMax) * 100;
+  }
+}

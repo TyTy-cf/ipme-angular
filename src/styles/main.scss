@@ -1,0 +1,64 @@
+
+body {
+  background-color: antiquewhite;
+}
+
+.btn-primary {
+  background-color: darken($primary, 15%);
+  color: lighten($default-font-color, 5%);
+
+  &:hover {
+    background-color: lighten($primary, 10%);
+    color: $default-font-color;
+  }
+}
+
+.container-image {
+  width: 140px;
+  height: 140px;
+
+  &.logo {
+    width: 24px;
+    height: 24px;
+  }
+
+  > img {
+    width: 100%;
+    height: 100%;
+  }
+
+}
+
+.lifePoint-bar {
+  background-color: black;
+  color: antiquewhite;
+  max-width: 200px;
+  height: 24px;
+  position: relative;
+  border-radius: 0.3em;
+
+  .lifePoint-loss {
+    height: 24px;
+    border-radius: 0.3em;
+
+    > p {
+      z-index: 5;
+      position: absolute;
+      left: 34%;
+    }
+  }
+}
+
+.lp-100 {
+  background-color: $lp-100;
+}
+.lp-75 {
+  background-color: $lp-75;
+}
+.lp-50 {
+  background-color: $lp-50;
+}
+.lp-25 {
+  background-color: $lp-25;
+}
+
