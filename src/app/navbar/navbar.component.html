@@ -1,0 +1,13 @@
+
+<nav class="navbar navbar-light bg-dark text-white">
+  <div class="container-fluid">
+    <a class="btn btn-primary" routerLink="/" [hidden]="hideButton('/')">
+      Accueil
+    </a>
+    <a class="btn btn-primary" [routerLink]="urlHeroes" [hidden]="hideButton(urlHeroes)">
+      {{ sliceUrl(urlHeroes)|titlecase }}
+    </a>
+    Angular IPME
+  </div>
+</nav>
+

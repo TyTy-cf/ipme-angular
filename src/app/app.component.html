@@ -1,8 +1,6 @@
 
 <header>
-  <a class="btn btn-primary" [routerLink]="urlHeroes" [hidden]="hideButton(urlHeroes)">
-    {{ sliceUrl(urlHeroes)|titlecase }}
-  </a>
+  <app-navbar></app-navbar>
 </header>
 
 <router-outlet></router-outlet>

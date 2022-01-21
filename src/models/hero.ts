@@ -12,6 +12,7 @@ export class Hero {
   private _image: string = '';
   private _backgroundColor: string = '';
   private _color: string = '';
+  private _takenDamage: number = 0;
 
   constructor(name: string, lifePointMax: number, physicalPower: number, armor: number, criticalStrikeChance: number, image: string, background: string, color: string) {
     this._name = name;
@@ -117,7 +118,16 @@ export class Hero {
     return (this.currentLifePoint/this.lifePointMax) * 100;
   }
 
+  get takenDamage(): number {
+    return this._takenDamage;
+  }
+
+  set takenDamage(value: number) {
+    this._takenDamage = value;
+  }
+
   takingDamage(damage: number): void {
+    this.takenDamage = damage;
     this.currentLifePoint -= damage;
   }
 }

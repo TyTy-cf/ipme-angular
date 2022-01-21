@@ -37,7 +37,15 @@
               </p>
             </div>
           </div>
-          <button type="button" class="btn btn-danger" (click)="hero.takingDamage(50)">-</button>
+          <button type="button"
+                  class="btn btn-danger"
+                  (click)="hero.takingDamage(utilityService.getRangeRandom(100))"
+          >
+            -
+          </button>
+          <div class="text-center" [hidden]="hero.takenDamage === 0">
+            -{{ hero.takenDamage }}
+          </div>
         </td>
         <td>{{ hero.level }}</td>
         <td>
