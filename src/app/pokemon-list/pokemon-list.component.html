@@ -1,0 +1,32 @@
+
+<div class="container" *ngIf="iPokemonList; else noDatas">
+  <div class="row my-4">
+    <button [disabled]="iPokemonList.previous === null"
+            (click)="callPage(-20)"
+            class="col-2 btn btn-info"
+    >
+      Previous
+    </button>
+    <button [disabled]="iPokemonList.next === null"
+            (click)="callPage(20)"
+            class="col-2 btn btn-info offset-8"
+    >
+      Next
+    </button>
+  </div>
+  <div>
+    <h2 class="text-center">Pokémon de {{ offset+1 }} à {{ offset+20 }}</h2>
+    <div class="row mb-5">
+      <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 text-center my-3" *ngFor="let pokemonResult of iPokemonList.results">
+        <div class="container-image avatar mx-auto">
+          <img [src]="getImageFromUrl(pokemonResult.url)">
+        </div>
+        <h3>{{pokemonResult.name|titlecase}}</h3>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ng-template #noDatas>
+  Un problème est survenu pendant la récupération des données...
+</ng-template>

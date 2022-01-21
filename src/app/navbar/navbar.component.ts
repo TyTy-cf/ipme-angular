@@ -11,6 +11,9 @@ export class NavbarComponent {
   static pathHeroes: string = 'heroes';
   urlHeroes: string = '/' + NavbarComponent.pathHeroes;
 
+  static pathPokemonList: string = 'pokemons';
+  urlPokemonList: string = '/' + NavbarComponent.pathPokemonList;
+
   // private router: Router;
   //
   // constructor(router: Router) {

@@ -1,12 +1,17 @@
 
 <nav class="navbar navbar-light bg-dark text-white">
   <div class="container-fluid">
-    <a class="btn btn-primary" routerLink="/" [hidden]="hideButton('/')">
-      Accueil
-    </a>
-    <a class="btn btn-primary" [routerLink]="urlHeroes" [hidden]="hideButton(urlHeroes)">
-      {{ sliceUrl(urlHeroes)|titlecase }}
-    </a>
+    <div>
+      <a class="btn btn-primary" routerLink="/" [hidden]="hideButton('/')">
+        Accueil
+      </a>
+      <a class="btn btn-primary" [routerLink]="urlHeroes" [hidden]="hideButton(urlHeroes)">
+        {{ sliceUrl(urlHeroes)|titlecase }}
+      </a>
+      <a class="btn btn-primary" [routerLink]="urlPokemonList" [hidden]="hideButton(urlPokemonList)">
+        {{ sliceUrl(urlPokemonList)|titlecase }}
+      </a>
+    </div>
     Angular IPME
   </div>
 </nav>
