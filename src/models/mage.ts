@@ -6,4 +6,9 @@ export class Mage extends Hero {
     super(name, 510, 89, 10,18, 'assets/images/rpg/hero/mage.png', '#21f3ff', '#282828');
   }
 
+  levelUp() {
+    super.levelUp();
+    this.currentLifePoint += 64;
+    this.lifePointMax += 64;
+  }
 }

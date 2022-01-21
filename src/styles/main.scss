@@ -26,6 +26,16 @@ body {
     @include height-logo;
   }
 
+  &.detail-avatar {
+    width: 100%;
+    height: 80vh;
+  }
+
+  &.home-avatar {
+    width: 100%;
+    height: 60vh;
+  }
+
   &.avatar {
     width: 200px;
     height: 200px;
@@ -75,3 +85,9 @@ body {
   background-color: $lp-25;
 }
 
+.card-pokemon {
+  cursor: pointer;
+  .avatar:hover {
+    transform: scale(1.1);
+  }
+}

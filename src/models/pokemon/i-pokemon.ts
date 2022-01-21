@@ -7,4 +7,15 @@ export interface IPokemon {
   weight: number;
   order: number;
   types: ITypeSlot[];
+  sprites: {
+    other: {
+      home: {
+        front_default: string;
+        front_shiny: string;
+      }
+      'official-artwork': {
+        front_default: string;
+      }
+    }
+  }
 }

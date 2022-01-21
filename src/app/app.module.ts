@@ -8,13 +8,15 @@ import { NavbarComponent } from './navbar/navbar.component';
 import {UtilityService} from "../service/utility.service";
 import {HttpClientModule} from "@angular/common/http";
 import { PokemonListComponent } from './pokemon-list/pokemon-list.component';
+import { PokemonDetailComponent } from './pokemon-detail/pokemon-detail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     YahtzeeComponent,
     NavbarComponent,
-    PokemonListComponent
+    PokemonListComponent,
+    PokemonDetailComponent
   ],
   imports: [
     BrowserModule,

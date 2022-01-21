@@ -10,13 +10,11 @@ import {IPokemon} from "../../models/pokemon/i-pokemon";
 })
 export class PokemonListComponent implements OnInit {
 
-  static defaultUrl: string = 'https://pokeapi.co/api/v2/pokemon/';
   iPokemonList: IPokemonList|undefined;
   iPokemonArray: IPokemon[] = [];
   offset: number = 0;
 
-
-  constructor(private pokemonService: PokemonService) { }
+  constructor(public pokemonService: PokemonService) { }
 
   ngOnInit(): void {
     this.callPage(0);
@@ -41,10 +39,5 @@ export class PokemonListComponent implements OnInit {
           });
         }
       });
-  }
-
-  getUrlImageByType(name: string): string {
-    console.log(name);
-    return 'assets/images/pokemon/pkmn-types/type-' + name + '.png';
   }
 }

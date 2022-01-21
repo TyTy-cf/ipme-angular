@@ -1,5 +1,5 @@
 
-export class Hero {
+export abstract class Hero {
 
   private _name: string = '';
   private _level: number = 1;
@@ -14,7 +14,7 @@ export class Hero {
   private _color: string = '';
   private _takenDamage: number = 0;
 
-  constructor(name: string, lifePointMax: number, physicalPower: number, armor: number, criticalStrikeChance: number, image: string, background: string, color: string) {
+  protected constructor(name: string, lifePointMax: number, physicalPower: number, armor: number, criticalStrikeChance: number, image: string, background: string, color: string) {
     this._name = name;
     this._lifePointMax = lifePointMax;
     this._currentLifePoint = lifePointMax;
@@ -130,4 +130,9 @@ export class Hero {
     this.takenDamage = damage;
     this.currentLifePoint -= damage;
   }
+
+  levelUp(): void {
+    this._level++;
+  }
+
 }

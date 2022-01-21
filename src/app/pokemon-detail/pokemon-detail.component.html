@@ -1,0 +1,36 @@
+
+<div class="container">
+  <div class="row" *ngIf="iPokemon; else noDatas">
+    <div class="col-lg-6 col-md-12">
+      <div class="container-image detail-avatar">
+        <img [src]="iPokemon.sprites.other['official-artwork'].front_default">
+      </div>
+    </div>
+    <div class="col-lg-6 col-md-12">
+      <h1>{{iPokemon.name|titlecase}}</h1>
+      <div class="row">
+        <div  *ngFor="let type of iPokemon.types"
+              class="container-image small-avatar mx-auto"
+        >
+          <img [src]="pokemonService.getUrlImageByType(type.type.name)">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-6">
+          <div class="container-image home-avatar">
+            <img [src]="iPokemon.sprites.other.home.front_default">
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="container-image home-avatar">
+            <img [src]="iPokemon.sprites.other.home.front_shiny">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ng-template #noDatas>
+  En attente de récupération des données...
+</ng-template>
