@@ -1,0 +1,55 @@
+
+<div *ngIf="hero; else noHero"
+     [class.d-none]="hero.getPercentLife() <= 0"
+     [ngStyle]="{'backgroundColor': hero.backgroundColor, 'color': hero.color}"
+>
+    <div class="container-image">
+      <img [src]="hero.image" [alt]="hero.name">
+    </div>
+    {{ hero.name }}
+    <div class="lifePoint-bar mt-1">
+      <div  class="lifePoint-loss"
+            [class.lp-100]="hero.getPercentLife() > 75"
+            [class.lp-75]="hero.getPercentLife() <= 75"
+            [class.lp-50]="hero.getPercentLife() <= 50"
+            [class.lp-25]="hero.getPercentLife() <= 25"
+            [ngStyle]="{'width': (hero.getPercentLife())+'%'}"
+      >
+        <p>
+          {{ hero.currentLifePoint }} / {{ hero.lifePointMax }}
+        </p>
+      </div>
+    </div>
+    <button type="button"
+            class="btn btn-danger"
+            (click)="hero.takingDamage(utilityService.getRangeRandom(100))"
+    >
+      -
+    </button>
+    <div class="text-center" [hidden]="hero.takenDamage === 0">
+      -{{ hero.takenDamage }}
+    </div>
+    {{ hero.level }}
+    <div class="d-flex">
+      <div class="container-image logo">
+        <img src="/assets/images/rpg/defense.png">
+      </div>
+      {{ hero.armor }}
+    </div>
+    <div class="d-flex">
+      <div class="container-image logo">
+        <img src="/assets/images/rpg/sword.png">
+      </div>
+      {{ hero.physicalPower }}
+    </div>
+    <div class="d-flex">
+      <div class="container-image logo">
+        <img src="/assets/images/rpg/cs.png">
+      </div>
+      {{ hero.criticalStrikeChance }}% ({{ hero.criticalStrikeRatio }})
+    </div>
+</div>
+
+<ng-template #noHero>
+  Y A RIEN
+</ng-template>

@@ -9,6 +9,7 @@ import {UtilityService} from "../service/utility.service";
 import {HttpClientModule} from "@angular/common/http";
 import { PokemonListComponent } from './pokemon-list/pokemon-list.component';
 import { PokemonDetailComponent } from './pokemon-detail/pokemon-detail.component';
+import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { PokemonDetailComponent } from './pokemon-detail/pokemon-detail.componen
     YahtzeeComponent,
     NavbarComponent,
     PokemonListComponent,
-    PokemonDetailComponent
+    PokemonDetailComponent,
+    HeroDetailComponent
   ],
   imports: [
     BrowserModule,
