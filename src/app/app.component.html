@@ -1,7 +1,17 @@
 
-<div class="container">
-  <router-outlet></router-outlet>
-</div>
+<header>
+  <a class="btn btn-primary" [routerLink]="urlHeroes" [hidden]="hideButton(urlHeroes)">
+    {{ sliceUrl(urlHeroes)|titlecase }}
+  </a>
+</header>
+
+<router-outlet></router-outlet>
+
+<footer>
+
+  SUPER FOOTER DE L'IPME 2k22
+
+</footer>
 
 <!--<div class="container">-->
 <!--  <div>-->

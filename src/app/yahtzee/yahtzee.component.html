@@ -1,68 +1,70 @@
 
-<table class="table">
-  <thead>
-    <tr>
-      <th></th>
-      <th>Name</th>
-      <th>Level</th>
-      <th>Armor</th>
-      <th>Damage</th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr
-        *ngFor="let hero of heroes"
-        [hidden]="hero.getPercentLife() <= 0"
-        [ngStyle]="{'backgroundColor': hero.backgroundColor, 'color': hero.color}"
-    >
-      <td>
-        <div class="container-image">
-          <img [src]="hero.image" [alt]="hero.name">
-        </div>
-      </td>
-      <td>
-        {{ hero.name }}
-        <div class="lifePoint-bar mt-1">
-          <div  class="lifePoint-loss"
-                [class.lp-100]="hero.getPercentLife() > 75"
-                [class.lp-75]="hero.getPercentLife() <= 75"
-                [class.lp-50]="hero.getPercentLife() <= 50"
-                [class.lp-25]="hero.getPercentLife() <= 25"
-                [ngStyle]="{'width': (hero.getPercentLife())+'%'}"
-          >
-            <p>
-              {{ hero.currentLifePoint }} / {{ hero.lifePointMax }}
-            </p>
+<div class="container">
+  <table class="table">
+    <thead>
+      <tr>
+        <th></th>
+        <th>Name</th>
+        <th>Level</th>
+        <th>Armor</th>
+        <th>Damage</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr
+          *ngFor="let hero of heroes"
+          [hidden]="hero.getPercentLife() <= 0"
+          [ngStyle]="{'backgroundColor': hero.backgroundColor, 'color': hero.color}"
+      >
+        <td>
+          <div class="container-image">
+            <img [src]="hero.image" [alt]="hero.name">
           </div>
-        </div>
-        <button type="button" class="btn btn-danger" (click)="hero.takingDamage(50)">-</button>
-      </td>
-      <td>{{ hero.level }}</td>
-      <td>
-        <div class="d-flex">
-          <div class="container-image logo">
-            <img src="/assets/images/rpg/defense.png">
+        </td>
+        <td>
+          {{ hero.name }}
+          <div class="lifePoint-bar mt-1">
+            <div  class="lifePoint-loss"
+                  [class.lp-100]="hero.getPercentLife() > 75"
+                  [class.lp-75]="hero.getPercentLife() <= 75"
+                  [class.lp-50]="hero.getPercentLife() <= 50"
+                  [class.lp-25]="hero.getPercentLife() <= 25"
+                  [ngStyle]="{'width': (hero.getPercentLife())+'%'}"
+            >
+              <p>
+                {{ hero.currentLifePoint }} / {{ hero.lifePointMax }}
+              </p>
+            </div>
           </div>
-          {{ hero.armor }}
-        </div>
-      </td>
-      <td>
-        <div class="d-flex">
-          <div class="container-image logo">
-            <img src="/assets/images/rpg/sword.png">
+          <button type="button" class="btn btn-danger" (click)="hero.takingDamage(50)">-</button>
+        </td>
+        <td>{{ hero.level }}</td>
+        <td>
+          <div class="d-flex">
+            <div class="container-image logo">
+              <img src="/assets/images/rpg/defense.png">
+            </div>
+            {{ hero.armor }}
           </div>
-          {{ hero.physicalPower }}
-        </div>
-      </td>
-      <td>
-        <div class="d-flex">
-          <div class="container-image logo">
-            <img src="/assets/images/rpg/cs.png">
+        </td>
+        <td>
+          <div class="d-flex">
+            <div class="container-image logo">
+              <img src="/assets/images/rpg/sword.png">
+            </div>
+            {{ hero.physicalPower }}
           </div>
-          {{ hero.criticalStrikeChance }}% ({{ hero.criticalStrikeRatio }})
-        </div>
-      </td>
-    </tr>
-  </tbody>
-</table>
+        </td>
+        <td>
+          <div class="d-flex">
+            <div class="container-image logo">
+              <img src="/assets/images/rpg/cs.png">
+            </div>
+            {{ hero.criticalStrikeChance }}% ({{ hero.criticalStrikeRatio }})
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

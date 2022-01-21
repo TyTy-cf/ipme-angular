@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-root',
@@ -7,20 +8,22 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 
-  title: string = 'Hello IPME !';
-  isClicked: boolean = false;
+  // private router: Router;
+  //
+  // constructor(router: Router) {
+  //   this.router = router;
+  // }
 
-  private getUpperTitle(): string {
-    return this.title.toUpperCase();
+  static pathHeroes: string = 'heroes';
+  urlHeroes: string = '/' + AppComponent.pathHeroes;
+
+  constructor(private router: Router) { }
+
+  hideButton(url: string): boolean {
+    return this.router.url === url;
   }
 
-  coucou(): void {
-    this.title = 'Coucou IPME !';
-    this.isClicked = !this.isClicked;
-  }
-
-  hello(): void {
-    this.title = 'Hello IPME !';
-    this.isClicked = !this.isClicked;
+  sliceUrl(url: string): string {
+    return url.slice(1, url.length);
   }
 }

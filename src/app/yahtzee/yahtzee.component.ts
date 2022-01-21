@@ -5,7 +5,7 @@ import {Rogue} from "../../models/rogue";
 import {Mage} from "../../models/mage";
 
 @Component({
-  selector: 'app-yahtzee',
+  selector: 'app-heroes',
   templateUrl: './yahtzee.component.html',
   styleUrls: ['./yahtzee.component.scss']
 })
