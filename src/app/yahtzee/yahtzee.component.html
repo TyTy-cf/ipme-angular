@@ -13,6 +13,7 @@
   <tbody>
     <tr
         *ngFor="let hero of heroes"
+        [hidden]="hero.getPercentLife() <= 0"
         [ngStyle]="{'backgroundColor': hero.backgroundColor, 'color': hero.color}"
     >
       <td>
@@ -35,7 +36,7 @@
             </p>
           </div>
         </div>
-        <button class="btn btn-danger" (click)="lifeLoss(hero)">-</button>
+        <button type="button" class="btn btn-danger" (click)="hero.takingDamage(50)">-</button>
       </td>
       <td>{{ hero.level }}</td>
       <td>
@@ -65,4 +66,3 @@
     </tr>
   </tbody>
 </table>
-

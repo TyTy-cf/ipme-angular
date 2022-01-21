@@ -3,6 +3,10 @@ body {
   background-color: antiquewhite;
 }
 
+@mixin height-logo {
+  height: 24px;
+}
+
 .btn-primary {
   background-color: darken($primary, 15%);
   color: lighten($default-font-color, 5%);
@@ -19,7 +23,7 @@ body {
 
   &.logo {
     width: 24px;
-    height: 24px;
+    @include height-logo;
   }
 
   > img {
@@ -30,19 +34,19 @@ body {
 }
 
 .lifePoint-bar {
+  @include height-logo;
   background-color: black;
   color: antiquewhite;
   max-width: 200px;
-  height: 24px;
   position: relative;
   border-radius: 0.3em;
 
   .lifePoint-loss {
-    height: 24px;
+    @include height-logo;
     border-radius: 0.3em;
 
     > p {
-      z-index: 5;
+      z-index: 1;
       position: absolute;
       left: 34%;
     }

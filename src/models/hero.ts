@@ -116,4 +116,8 @@ export class Hero {
   getPercentLife(): number {
     return (this.currentLifePoint/this.lifePointMax) * 100;
   }
+
+  takingDamage(damage: number): void {
+    this.currentLifePoint -= damage;
+  }
 }
