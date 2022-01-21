@@ -17,11 +17,20 @@
   <div>
     <h2 class="text-center">Pokémon de {{ offset+1 }} à {{ offset+20 }}</h2>
     <div class="row mb-5">
-      <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 text-center my-3" *ngFor="let pokemonResult of iPokemonList.results">
+      <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 text-center my-3"
+           *ngFor="let pokemon of iPokemonArray"
+      >
         <div class="container-image avatar mx-auto">
-          <img [src]="getImageFromUrl(pokemonResult.url)">
+          <img [src]="getImageFromUrl(pokemon.id)">
         </div>
-        <h3>{{pokemonResult.name|titlecase}}</h3>
+        <h3>{{pokemon.name|titlecase}}</h3>
+        <div class="row">
+          <div  *ngFor="let type of pokemon.types"
+                class="container-image small-avatar mx-auto"
+          >
+            <img [src]="getUrlImageByType(type.type.name)">
+          </div>
+        </div>
       </div>
     </div>
   </div>

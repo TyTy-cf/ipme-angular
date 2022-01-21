@@ -31,6 +31,10 @@ body {
     height: 200px;
   }
 
+  &.small-avatar {
+    @include height-logo;
+  }
+
   > img {
     width: 100%;
     height: 100%;
