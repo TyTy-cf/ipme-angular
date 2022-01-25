@@ -7,4 +7,10 @@ export class Rogue extends Hero {
     this.criticalStrikeRatio = 1.75;
   }
 
+  levelUp(): void {
+    super.levelUp();
+    this.currentLifePoint += 71;
+    this.lifePointMax += 71;
+  }
+
 }

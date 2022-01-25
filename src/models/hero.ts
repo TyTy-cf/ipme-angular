@@ -1,18 +1,18 @@
 
 export abstract class Hero {
 
-  private _name: string = '';
-  private _level: number = 1;
-  private _lifePointMax: number = 0;
-  private _currentLifePoint: number = 0;
-  private _physicalPower: number = 0;
-  private _armor: number = 20;
-  private _criticalStrikeChance: number = 0;
-  private _criticalStrikeRatio: number = 1.5;
-  private _image: string = '';
-  private _backgroundColor: string = '';
-  private _color: string = '';
-  private _takenDamage: number = 0;
+  protected _name: string = '';
+  protected _level: number = 1;
+  protected _lifePointMax: number = 0;
+  protected _currentLifePoint: number = 0;
+  protected _physicalPower: number = 0;
+  protected _armor: number = 20;
+  protected _criticalStrikeChance: number = 0;
+  protected _criticalStrikeRatio: number = 1.5;
+  protected _image: string = '';
+  protected _backgroundColor: string = '';
+  protected _color: string = '';
+  protected _takenDamage: number = 0;
 
   protected constructor(name: string, lifePointMax: number, physicalPower: number, armor: number, criticalStrikeChance: number, image: string, background: string, color: string) {
     this._name = name;

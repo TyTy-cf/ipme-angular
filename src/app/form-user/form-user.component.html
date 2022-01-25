@@ -1,0 +1,83 @@
+
+<div class="container mt-5">
+  <form (ngSubmit)="onSubmit()" #formUser="ngForm">
+    <div class="row">
+      <div  class="col-6 mx-auto">
+        <input class="form-control"
+               placeholder="FirstName"
+               type="text"
+               required
+               minlength="3"
+               pattern="[a-zA-Z'\-'\s]*"
+               [(ngModel)]="user.firstName"
+               [name]="'firstName'"
+               [class.is-invalid]="firstNameInput.touched && firstNameInput.invalid"
+               [class.is-valid]="firstNameInput.touched && firstNameInput.valid"
+               #firstNameInput="ngModel"
+        >
+      </div>
+      <div class="col-6 alert-danger" *ngIf="firstNameInput.invalid && (firstNameInput.touched || firstNameInput.dirty)">
+        <div *ngIf="firstNameInput.errors?.required">
+          Firstname cannot be empty
+        </div>
+        <div *ngIf="firstNameInput.errors?.minlength">
+          Firstname cannot be smaller than 3
+        </div>
+        <div *ngIf="firstNameInput.errors?.pattern">
+          Firstname cannot contains special characters
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-6 mx-auto">
+        <input class="form-control"
+               placeholder="LastName"
+               type="text"
+               required
+               pattern="[a-zA-Z'\-'\s]*"
+               [(ngModel)]="user.lastName"
+               [name]="'lastName'"
+               [class.is-invalid]="lastNameInput.touched && lastNameInput.invalid"
+               [class.is-valid]="lastNameInput.touched && lastNameInput.valid"
+               #lastNameInput="ngModel"
+        >
+      </div>
+      <div class="col-6 alert-danger" *ngIf="lastNameInput.invalid && (lastNameInput.touched || lastNameInput.dirty)">
+        <div *ngIf="lastNameInput.errors?.required">
+          Lastname cannot be empty
+        </div>
+        <div *ngIf="lastNameInput.errors?.pattern">
+          Lastname cannot contains special characters
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-6 mx-auto">
+        <input class="form-control"
+               placeholder="Email"
+               type="email"
+               required
+               [(ngModel)]="user.email"
+               [name]="'email'"
+               [class.is-invalid]="emailInput.touched && emailInput.invalid"
+               [class.is-valid]="emailInput.touched && emailInput.valid"
+               #emailInput="ngModel"
+        >
+      </div>
+      <div class="col-6 alert-danger" *ngIf="emailInput.invalid && (emailInput.touched || emailInput.dirty)">
+        <div *ngIf="emailInput.errors?.required">
+          Email cannot be empty
+        </div>
+      </div>
+    </div>
+    <div class="mx-auto">
+      <button type="reset" class="btn btn-info">
+        Reset
+      </button>
+      <button class="btn btn-primary" [disabled]="formUser.invalid">
+        Soumettre
+      </button>
+    </div>
+  </form>
+</div>
+

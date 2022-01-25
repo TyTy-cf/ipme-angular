@@ -10,6 +10,9 @@ import {HttpClientModule} from "@angular/common/http";
 import { PokemonListComponent } from './pokemon-list/pokemon-list.component';
 import { PokemonDetailComponent } from './pokemon-detail/pokemon-detail.component';
 import { HeroDetailComponent } from './hero-detail/hero-detail.component';
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import { FormUserComponent } from './form-user/form-user.component';
+import { FormUserCodeComponent } from './form-user-code/form-user-code.component';
 
 @NgModule({
   declarations: [
@@ -18,12 +21,16 @@ import { HeroDetailComponent } from './hero-detail/hero-detail.component';
     NavbarComponent,
     PokemonListComponent,
     PokemonDetailComponent,
-    HeroDetailComponent
+    HeroDetailComponent,
+    FormUserComponent,
+    FormUserCodeComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule // Obligatoire pour faire une requête Http
+    HttpClientModule, // Obligatoire pour faire une requête Http
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [
     UtilityService,

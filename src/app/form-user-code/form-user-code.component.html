@@ -1,0 +1,69 @@
+
+
+<div class="container">
+  <form [formGroup]="formGroup">
+    <div class="row">
+      <div  class="col-6 mx-auto">
+        <input class="form-control"
+               placeholder="FirstName"
+               type="text"
+               [formControlName]="'_firstName'"
+               [name]="'firstName'"
+               [class.is-invalid]="firstName.touched && firstName.invalid"
+               [class.is-valid]="firstName.touched && firstName.valid"
+        >
+      </div>
+      <div class="col-6 alert-danger" *ngIf="firstName.invalid && (firstName.touched || firstName.dirty)">
+        <div *ngIf="firstName.errors?.required">
+          Firstname cannot be empty
+        </div>
+        <div *ngIf="firstName.errors?.minlength">
+          Firstname cannot be smaller than 3
+        </div>
+        <div *ngIf="firstName.errors?.pattern">
+          Firstname cannot contains special characters
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-6 mx-auto">
+        <input class="form-control"
+               placeholder="LastName"
+               type="text"
+               [formControlName]="'_lastName'"
+               [name]="'lastName'"
+               [class.is-invalid]="lastName.touched && lastName.invalid"
+               [class.is-valid]="lastName.touched && lastName.valid"
+        >
+      </div>
+      <div class="col-6 alert-danger" *ngIf="lastName.invalid && (lastName.touched || lastName.dirty)">
+        <div *ngIf="lastName.errors?.required">
+          Lastname cannot be empty
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-6 mx-auto">
+        <input class="form-control"
+               placeholder="Email"
+               type="email"
+               required
+               [formControlName]="'_email'"
+               [name]="'email'"
+               [class.is-invalid]="email.touched && email.invalid"
+               [class.is-valid]="email.touched && email.valid"
+        >
+      </div>
+      <div class="col-6 alert-danger" *ngIf="email.invalid && (email.touched || email.dirty)">
+        <div *ngIf="email.errors?.required">
+          Email cannot be empty
+        </div>
+      </div>
+    </div>
+    <div class="mx-auto">
+      <button class="btn btn-primary" (click)="onSubmit()" [disabled]="formGroup.invalid">
+        Soumettre
+      </button>
+    </div>
+  </form>
+</div>
