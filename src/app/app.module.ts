@@ -13,6 +13,7 @@ import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { FormUserComponent } from './form-user/form-user.component';
 import { FormUserCodeComponent } from './form-user-code/form-user-code.component';
+import { AccountComponent } from './account/account.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { FormUserCodeComponent } from './form-user-code/form-user-code.component
     PokemonDetailComponent,
     HeroDetailComponent,
     FormUserComponent,
-    FormUserCodeComponent
+    FormUserCodeComponent,
+    AccountComponent
   ],
   imports: [
     BrowserModule,

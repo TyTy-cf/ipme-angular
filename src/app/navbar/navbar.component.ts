@@ -8,6 +8,9 @@ import {Router} from "@angular/router";
 })
 export class NavbarComponent {
 
+  static pathAccount : string = 'account';
+  urlAccount: string = '/' + NavbarComponent.pathAccount;
+
   static pathHeroes : string = 'heroes';
   urlHeroes: string = '/' + NavbarComponent.pathHeroes;
 
