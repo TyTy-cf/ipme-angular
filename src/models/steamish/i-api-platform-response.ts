@@ -1,4 +1,4 @@
 
-export interface IApiplatformResponse {
-  
+export interface IApiPlatformResponse<T> {
+  "hydra:member": T[];
 }
